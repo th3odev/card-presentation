@@ -1,5 +1,4 @@
-/* resete e configurações básicas */
-
+/* reset e configurações básicas */
 * {
   margin: 0;
   padding: 0;
@@ -7,30 +6,37 @@
 }
 
 /* estilo geral */
+html, body {
+  height: 100%; 
+  overflow: hidden; 
+}
 
 body {
   user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; 
   background-color: #f0f0f0;
   margin: 0;
   font-family: Roboto, Helvetica, sans-serif;
   transition: background-color 0.4s ease, color 0.4s ease;
+  padding: 0; 
 }
 
 /* estilo do card */
 
 .card {
+  max-width: 100%; /* limita o tamanho máximo */
   width: 480px;
-  height: 720px;
+  height: auto; /* permite ajuste de altura conforme o conteúdo */
   border-radius: 50px;
   background: #e0e0e0;
   box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
   padding: 20px;
   text-align: center;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+  overflow: hidden; /* impede que o conteúdo do card saia de dentro dele */
 }
 
 /* estilo do pfp  */
@@ -122,9 +128,12 @@ body {
 
 @media (max-width: 768px) {
   .card {
-    width: 90%;
-    height: auto;
+    width: 90%; 
+    max-width: 400px; 
+    height: auto; 
     padding: 15px;
+    box-sizing: border-box; 
+    margin: 0 auto; 
   }
 
   .profile-img {
